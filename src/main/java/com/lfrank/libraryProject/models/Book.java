@@ -12,12 +12,19 @@ public class Book {
     private String title;
     private String author;
     private String description;
+    private String gender;
 
-    public Book(String author, String description, Long id, String title) {
+
+
+    public Book() {
+    }
+
+    public Book(String author, String description, Long id, String title, String gender) {
         this.author = author;
         this.description = description;
         this.id = id;
         this.title = title;
+        this.gender = gender;
     }
 
     public String getAuthor() {
@@ -40,6 +47,7 @@ public class Book {
         return id;
     }
 
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -50,5 +58,13 @@ public class Book {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

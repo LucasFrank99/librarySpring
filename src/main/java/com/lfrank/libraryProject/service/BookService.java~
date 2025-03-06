@@ -19,9 +19,6 @@ public class BookService  {
     public Book save(Book book) {return bookRepository.save(book);}
     //Delete a book by id
     public void delete(Long id) {
-        if(!bookRepository.existsById(id)){
-            throw new RuntimeException("Book not found");
-        }
         bookRepository.deleteById(id);
     }
     //List all
@@ -31,7 +28,7 @@ public class BookService  {
 
     //Update a book
     public Book updateBook(Long id, Book book) {
-        Book existingBook = bookRepository.findById(id).orElseThrow(() -> new RuntimeException("Book not found"));
+        Book existingBook = bookRepository.findById(id).orElseThrow();
         existingBook.setTitle(book.getTitle());
         existingBook.setAuthor(book.getAuthor());
         existingBook.setDescription(book.getDescription());
