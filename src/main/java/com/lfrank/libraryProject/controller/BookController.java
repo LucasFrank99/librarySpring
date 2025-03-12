@@ -30,19 +30,19 @@ public class BookController {
     }
 
     //Delete a book
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/library/{id}")
     public void deleteBook(@PathVariable Long id) {
         bookService.delete(id);
     }
 
     //Update a book
-    @PutMapping("/{id}")
+    @PutMapping("/library/{id}")
     public Book updateBook(@PathVariable Long id, @RequestBody Book book){
         return bookService.updateBook(id,book);
     }
 
     //Find a book by tittle or list all books by author or gender
-    @GetMapping("/search")
+    @GetMapping("/library/search")
     public List<Book> findBooks(@RequestParam(required = false) String title,
                                 @RequestParam(required = false) String author,
                                 @RequestParam(required = false) String gender) {

@@ -2,6 +2,7 @@ package com.lfrank.libraryProject.controller;
 
 import com.lfrank.libraryProject.models.Book;
 import com.lfrank.libraryProject.service.BookService;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,7 +42,7 @@ public class BookController {
     }
 
     //Find a book by tittle or list all books by author or gender
-    @GetMapping("/library/search")
+    @GetMapping("/search")
     public List<Book> findBooks(@RequestParam(required = false) String title,
                                 @RequestParam(required = false) String author,
                                 @RequestParam(required = false) String gender) {
